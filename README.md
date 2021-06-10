@@ -30,4 +30,4 @@ This is a simple and responsive login form <br />
 
 ### Final Result
 
-<img src="src/assets/login" alt="Web Version" />
+<img src="assets/login.png" alt="Web Version" />
