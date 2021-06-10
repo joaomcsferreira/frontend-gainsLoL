@@ -3,7 +3,7 @@
         <div class="login">
             <div class="content-login">
                 <header>
-                    <h1> Login Sistema </h1>
+                    <h1> Login </h1>
                 </header>
                 <div class="form">
                     <form>
@@ -43,7 +43,7 @@
 .main {
     display: flex;
     height: 100vh;
-    background-color: #126e82;
+     background-image: linear-gradient(45deg, #126e82, #245B90);
     /* font-family: 'Roboto', 'sams-serif'; */
 }
 .login{
@@ -83,6 +83,20 @@
             input {
                 margin-top: 20px;
             }
+            button {
+                margin-top: 2rem;
+                padding: 0.4rem;
+                width: 100%;
+                background: linear-gradient(to left, #126e82, #51c4d3);
+                cursor: pointer;
+                color: white;
+                font-size: 0.9rem;
+                font-weight: 300;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+            }
+       
+
 
         }
     }
