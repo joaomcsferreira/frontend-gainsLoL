@@ -3,7 +3,7 @@
 
         <nav class="navbar navbar-expand navbar-light mb-20">
             <div class="container-fluid">
-                <a class="display-4 text-dark text-decoration-none" href="/">GainsLoL</a>
+                <a class="display-4 text-light text-decoration-none" href="/">GainsLoL</a>
 
                 <div id="menu-login">
                 <ul class="navbar-nav me-auto">
@@ -34,9 +34,17 @@ export default {
 </script>
 
 <style scoped>
+    header {
+        background-color: var(--color-background-nav);
+    }
+
+    .navbar-light .navbar-nav .nav-link{
+        color: var(--color-text-light);
+    }
+
     #line {
         display: block;
-        border-bottom: 1.5px solid #cecece;
+        border-bottom: 1.5px solid var(--color-text);
         margin: 0 50px;
     }
 </style>

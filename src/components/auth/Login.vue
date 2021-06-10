@@ -1,24 +1,24 @@
 <template>
-    <div class="main">
+    <div class="main text-center">
         <div class="login">
-            <div class="content-login">
-                <header>
-                    <h1> Login </h1>
-                </header>
-                <div class="form">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email:</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Senha:</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-primary" @click.prevent="login">Login</button>
-                    </form>
+            <form>
+                <i class="mb-4 mr-2 fas fa-user-circle fa-7x profile-icon"></i>
+
+                <h5 class="mb-3 fw-normal">Please sign in</h5>
+
+                <div class="w-100 form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Enter email">
+                    <label for="floatingInput">Email</label>
                 </div>
-            </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                
+                <br>
+
+                <button type="submit" class="w-100 btn btn-lg btn-outline-primary custom-button" @click.prevent="login">Login</button>
+            </form>
         </div> 
     </div>
 </template>
@@ -39,66 +39,40 @@
     }
 </script>
 
-<style lang="scss" scoped>
-.main {
-    display: flex;
-    height: 100vh;
-     background-image: linear-gradient(45deg, #126e82, #245B90);
-    /* font-family: 'Roboto', 'sams-serif'; */
-}
-.login{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+<style scoped>
 
-    .content-login {
-        width: 400px;
-        height: 450px;
-        background-color: #132c33;
-        border-radius: 7px;
+    .main {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        header {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            
-            h1 {
-                color: white;
-                font-size: 28px;
-            }
-        }
-        .form {
-            width: 70%;
-            margin-top: 20px;
-
-            label {
-                margin-top: 20px;
-                color: white;
-            }
-            input {
-                margin-top: 20px;
-            }
-            button {
-                margin-top: 2rem;
-                padding: 0.4rem;
-                width: 100%;
-                background: linear-gradient(to left, #126e82, #51c4d3);
-                cursor: pointer;
-                color: white;
-                font-size: 0.9rem;
-                font-weight: 300;
-                border-radius: 4px;
-                transition: all 0.3s ease;
-            }
-       
-
-
-        }
+        height: 100vh;
+        background-image: linear-gradient(45deg, #126e82, #245B90);
+        /* font-family: 'Roboto', 'sams-serif'; */
     }
-}
+
+    .login{
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        padding: 30px 60px;
+        background: var(--color-text-light);
+        border-radius: 5px;
+    }
+
+    .profile-icon {
+        color: var(--color-background-home);
+    }
+
+    #floatingInput {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    #floatingPassword {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .custom-button {
+        background-color: var(--color-button);
+        color: var(--color-text-light);
+    }
 </style>
