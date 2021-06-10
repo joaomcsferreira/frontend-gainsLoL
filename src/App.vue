@@ -7,6 +7,8 @@
 
 <script>
 
+import './style/global.css'
+
 import Header from './components/Header'
 
 export default {
@@ -16,7 +18,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
