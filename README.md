@@ -1,24 +1,32 @@
-# frontend
+# VueJS
 
-## Project setup
-```
+> ##### Vue.js is a framework for creating reusable components, including creating SPA's (Single Page Applications).
+
+## Initial settings to run the project
+
+```bash
+# clone the project
+git clone https://github.com/Joao-MCF/frontend-gainsLoL.git
+
+#enter the cloned directory
+Cd frontend-gainsLoL
+
+# Project setup
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
+# Compiles and hot-reloads for development
 yarn serve
-```
 
-### Compiles and minifies for production
-```
+# Compiles and minifies for production
 yarn build
-```
 
-### Lints and fixes files
-```
+# Lints and fixes files
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Login Form
+
+This is a simple and responsive login form <br />
+
+### Final Result
+<img src="assets/login.png" alt="Web Version"/>
