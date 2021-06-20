@@ -30,4 +30,5 @@ This is a simple and responsive login form <br />
 
 ### Final Result
 
-<img src="assets/login.png" alt="Web Version" />
+![Logim form](https://github.com/Joao-MCF/frontend-gainsLoL/blob/master/src/assets/login.png)
+
