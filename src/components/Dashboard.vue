@@ -70,38 +70,49 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12" id="principal">
-                            <button class="btn btn-lg btn-primary" @click.prevent="handle">Button</button>
                             <form @submit="postBet" class="row g-2 m-3">
                                 <div class="form-floating col-md">
-                                    <input type="date" v-model="newBet.game_date" class="form-control" id="floatingInput" placeholder="Enter email">
+                                    <input type="date" v-model="newBet.game_date" class="form-control" id="floatingInput" placeholder="Game date">
                                     <label for="floatingInput">Game date</label>
                                 </div>
                                 <div class="form-floating col-md">
-                                    <input type="text" v-model="newBet.league" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <select @change="onChange($event)" v-model="newBet.league" class="form-control" id="floatingPassword" placeholder="League">
+                                        <option v-for="league in leagueData" v-bind:key="league.id" v-bind:value="league['AreaId']">
+                                            {{ league['Name'] }}
+                                        </option>
+                                    </select>
                                     <label for="floatingPassword">League</label>
                                 </div>
                                 <div class="form-floating col-md">
-                                    <input type="text" v-model="newBet.style" class="form-control" id="floatingInput" placeholder="Enter email">
+                                    <input type="text" v-model="newBet.style" class="form-control" id="floatingInput" placeholder="Style">
                                     <label for="floatingInput">Style</label>
                                 </div>
                                 <div class="form-floating col-md">
-                                    <input type="text" v-model="newBet.winner" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <select v-model="newBet.winner" class="form-control" id="floatingPassword" placeholder="Winner">
+                                        <option v-for="team in sportData" v-bind:key="team.id">
+                                            {{ team['Name'] }}
+                                        </option>
+                                    </select>
                                     <label for="floatingPassword">Winner</label>
                                 </div>
                                 <div class="form-floating col-md">
-                                    <input type="text" v-model="newBet.loser" class="form-control" id="floatingInput" placeholder="Enter email">
-                                    <label for="floatingInput">Loser</label>
+                                    <select v-model="newBet.loser" class="form-control" id="floatingPassword" placeholder="Loser">
+                                        <option v-for="team in sportData" v-bind:key="team.id">
+                                            {{ team['Name'] }}
+                                        </option>
+                                    </select>
+                                    <label for="floatingPassword">Loser</label>
                                 </div>
                                 <div class="form-floating col-md">
-                                    <input type="text" v-model="newBet.result" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <input type="text" v-model="newBet.result" class="form-control" id="floatingPassword" placeholder="Result">
                                     <label for="floatingPassword">Result</label>
                                 </div>
                                 <div class="form-floating col-md">
-                                    <input type="text" v-model="newBet.input" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <input type="text" v-model="newBet.input" class="form-control" id="floatingPassword" placeholder="Input">
                                     <label for="floatingPassword">Input</label>
                                 </div>
                                 <div class="form-floating col-md">
-                                    <input type="text" v-model="newBet.odd" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <input type="text" v-model="newBet.odd" class="form-control" id="floatingPassword" placeholder="ODD">
                                     <label for="floatingPassword">ODD</label>
                                 </div>
 
@@ -153,24 +164,23 @@ export default {
     name: 'dashboard',
     data() {
         return {
-            newBet: {},
-        }
-    },
-    methods: {
-        ...mapActions(['fetchBets', 'addBet', 'deleteBet', 'getTeams']),
-        postBet() {
-            this.addBet(this.newBet)
-        },
-
-        handle() {
-            this.getTeams()
+            newBet: {}
         }
     },
     computed: 
-        mapGetters(['allBets']),
-    
+        mapGetters(['allBets', 'sportData', 'leagueData']),
+    methods: {
+        ...mapActions(['fetchBets', 'addBet', 'deleteBet', 'getTeams', 'getLeague']),
+        postBet() {
+            this.addBet(this.newBet)
+        },
+        onChange(event) {
+            this.getTeams(event.target.value)
+        }
+    },
     created() {
         this.fetchBets()
+        this.getLeague()
     }
 }
 </script>

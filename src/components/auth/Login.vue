@@ -7,44 +7,49 @@
                 <h5 class="mb-3 fw-normal">Please sign in</h5>
 
                 <div class="w-100 form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Enter email">
+                    <input type="email" v-model="newUser.email" class="form-control" id="floatingInput" placeholder="Enter email">
                     <label for="floatingInput">Email</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password" v-model="newUser.password" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                 </div>
                 
                 <br>
 
-                <button type="submit" class="w-100 btn btn-lg btn-outline-primary custom-button" @click.prevent="login">Login</button>
+                <button type="submit" class="w-100 btn btn-lg btn-outline-primary custom-button" @click.prevent="handleSubmit">Login</button>
             </form>
         </div> 
     </div>
 </template>
-<script>
-    export default {
-        name: 'LoginComponent',
-        
-        data(){
-            return{
 
-            }
-        },
-        methods: {
-            login(){
-                alert('ok!')
-            }
+<script>
+
+import { mapActions } from 'vuex'
+
+export default {
+    name: 'login',
+    
+    data(){
+        return {
+            newUser: {}
+        }
+    },
+    methods: {
+        ...mapActions(['login']),
+        handleSubmit() {
+            this.login(this.newUser)   
         }
     }
+}
 </script>
 
 <style scoped>
 
     .main {
-        display: flex;
+        padding-top: 80px;
         height: 100vh;
-        background-image: linear-gradient(45deg, #126e82, #245B90);
+        background-color: var(--color-background);
         /* font-family: 'Roboto', 'sams-serif'; */
     }
 
