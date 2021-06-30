@@ -1,24 +1,20 @@
-:root {
-    --color-background:#126e82;
-    --color-background-nav:#1E628C;
-    --color-background-home:#272C33;
-    --color-background-light:#EBECED;
+:root { 
+    --color-background:#e2e8f3;
+    --color-background-dark: #486f99;
+    --color-background-nav:#a6bddc;
+    --color-background-side: #363740;
+    --color-background-home:#c4d2e7;
     --color-button: #51c4d3;
     --color-text-light:#fff;
     --color-text-dark:#000;
     --color-text:#d8e3e7;
-  }
-
-html,
-body {
-    background-color: var(--color-text-dark);
 }
-
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
 }
 
 ul {
